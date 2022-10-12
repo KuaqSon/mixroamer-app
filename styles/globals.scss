@@ -1,0 +1,54 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.vinyl_record {
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, 0.85) 40%) no-repeat 100% 0,
+    linear-gradient(60deg, rgba(42, 41, 40, 0.85) 60%, transparent 60%) no-repeat 0 100%,
+    repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+  background-size: 50% 100%, 100% 50%, 100% 100%;
+  border-radius: 100%;
+  animation-name: spin;
+  animation-duration: 20000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-play-state: paused;
+  z-index: -1;
+}
+
+.vinyl_label {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-100px, -100px);
+  text-align: center;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.vinyl_record.vinyl_record_mobile {
+  width: 200px;
+  height: 200px;
+
+  .vinyl_label {
+    width: 120px;
+    height: 120px;
+    transform: translate(-60px, -60px);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
